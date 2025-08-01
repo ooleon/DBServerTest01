@@ -1,7 +1,7 @@
 # Python Technical Challenge
 
 
-## Question 1
+# Question 1
 
 Suponha que um banco possui entre suas APIs de uso interno, as seguintes:
 * Um serviço ("Operações em aberto") que gera a cada final de mês, uma lista dos associados e do saldo de suas operações 
@@ -51,7 +51,7 @@ assert expected_open_contracts == actual_open_contracts
 ```
 
 
-## Question 2
+# Question 2
 
 Suponha que um banco possua um serviço que permita a suas agências fazer requisições de valores monetários (dinheiro)
 que serão atendidos por uma central de distribuição através do envio de carros-forte para efetuar as entregas.
@@ -94,3 +94,43 @@ Esperamos que o teste seja entregue como um projeto e que o candidato tenha toda
 e não apenas a implementação do método
 
 Em resumo, pedimos que a solução seja uma que o candidato considere de boa qualidade em sua própria definição.
+
+## ✅ Boas Práticas Aplicadas
+
+| Item | Implementado? | Detalhe |
+|------|---------------|--------|
+| ✅ Boas práticas de código | Sim | `dataclass`, generators, imutabilidade |
+| ✅ PEP 8 / PEP 257 | Sim | Formatação e docstrings |
+| ✅ Tipagem estática | Sim | `typing.List`, type hints |
+| ✅ Documentação | Sim | `docstrings`, `README.md` |
+| ✅ Performance | Sim | `heapq.nlargest`, `set`, generator |
+| ✅ Testes | Sim | `pytest`, cobertura ampla |
+| ✅ Estrutura de projeto | Sim | Modular, com `__init__.py`, separação de concerns |
+| ✅ Tratamento de erro | Sim | Validações em `Contract` e entrada |
+| ✅ Escalabilidade | Sim | Solução eficiente para grandes volumes |
+
+
+# Delivery Optimizer
+
+Sistema para minimizar o número de viagens de carros-forte combinando pedidos de agências próximas.
+
+## Problema
+
+- Cada viagem pode levar até 2 pedidos.
+- A soma dos pedidos não pode exceder `n_max`.
+- Objetivo: minimizar o número de viagens.
+
+## Algoritmo
+
+Usa uma abordagem **gulosa com dois ponteiros**:
+1. Ordena os pedidos
+2. Tenta combinar o menor com o maior possível
+3. Se couber, usa os dois; senão, usa só o maior
+
+Complexidade: `O(n log n)` → ótimo para o problema.
+
+## Instalação
+
+```bash
+pip install -e .
+
