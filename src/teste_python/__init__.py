@@ -20,12 +20,10 @@ if __name__ == "__main__":
     top_n = 6
 
     actual_open_contracts = get_top_N_open_contracts(contracts, renegotiated, top_n)
-#    expected_open_contracts = [5, 4, 2]
-#   assert expected_open_contracts == actual_open_contracts
-#    print("✅ Teste passou com sucesso!")
+    expected_open_contracts = [48, 6, 5, 41, 40, 43]
+    assert expected_open_contracts == actual_open_contracts
+    print("✅ actual_open_contracts ", actual_open_contracts)
 
-    print("✅ actual_open_contracts ")
-    print(actual_open_contracts)
 
 
 
